@@ -23,7 +23,7 @@ public class StringBuilderExamples {
         System.out.println( userName);
         userName.replace(0,3,"xyzt");
         System.out.println( userName);
-                int
+
         StringBuilder iName = new StringBuilder();
         String xyz = "sldslkdlsdk";
         iName.append("irem").append(" arslan");
