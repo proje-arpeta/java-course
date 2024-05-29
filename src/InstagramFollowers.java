@@ -1,49 +1,39 @@
 import java.util.Scanner;
 
 public class InstagramFollowers {
+    public void operationMessages(){
+        System.out.println("Hoşgeldin");
+        System.out.println("1=> Takip Listesi");
+        System.out.println("2=> Takipçi Listesi");
+        System.out.println("3=> Arama");
+        System.out.println("0=> Çıkış");
+        System.out.println("Hangi işlemi yapmak istersin?");
+    }
+
+    public void printArrayList(String[] array, String title){
+        System.out.println( title + " sayısı " + array.length);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
     public static void main(String[] args) {
+        InstagramFollowers project = new InstagramFollowers();
         Scanner scanner = new Scanner(System.in);
         String[] followers = {"irem arslan","Büşra","Gözde","Can","Yağmır","Ece","Barış"};
         String[] following = {"Gülgün","Demet","Dilara","Can","Yağmır","Ece","Barış","Ahmet","Yiğit","Derya"};
 
-        int followCount = followers.length;
-        int followingCount = following.length;
-
-        System.out.println("Takipçi Sayısı :" + followCount  );
-        System.out.println("Takip Sayısı: " + followingCount);
-
-         System.out.println("Takipçi Listesi için 1 e Takip Listesi için 2 ye basınız");
-         int operation = scanner.nextInt();
-
-         System.out.println("Operasyon :" +  operation );
-
+        project.operationMessages();
+        int operation = scanner.nextInt();
          switch (operation){
              case 1:
-                 for (int i = 0; i < followCount ; i++) {
-                     String name = followers[i];
-                     System.out.println(name);
-                     for (int j = 0; j < followingCount ; j++) {
-                           String followingName = following[j];
-                           boolean isTheSame = followingName.equals(name);
-                           if (isTheSame){
-                               System.out.println("Ortak + " + followingName);
-                           }
-
-                     }
-                 }
+                 project.printArrayList(followers,"Takiçi");
                  break;
-                 case 2:
-                    for(String name: following){
-                        System.out.println(name);
-                        for (int i = 0; i <followCount ; i++) {
-                            String followerName = followers[i];
-                            boolean isTheSame = followerName.equals(name);
-                            if (isTheSame){
-                                System.out.println("Ortak + " + followerName);
-                            }
-                        }
-                    }
-                    break ;
+              case 2:
+                  project.printArrayList(following,"Takip");
+                  break ;
+              case 3:
+                 System.out.println("Ara");
+                 break;
              default:
                  System.out.println("Geçersiz işlem");
                  break;
