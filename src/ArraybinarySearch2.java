@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class ArraybinarySearch2 {
 
-    public void returnArrayElements(String[] array){
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+    public void returnArrayElements(String[] xxxxx){
+        for (int i = 0; i < xxxxx.length; i++) {
+            System.out.println(xxxxx[i]);
         }
     }
     public static void main(String[] args) {
